@@ -1,0 +1,11 @@
+#all_links .link {
+  border: 5px solid gray;
+  border-radius: 10px;
+  display: inline-block;
+  padding: 10px;
+}
+
+/*#read < div {
+  text-decoration: line-through;
+  background-color: gray;
+}*/

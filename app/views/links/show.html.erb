@@ -1,0 +1,8 @@
+<h1>Edit <%= @link.title.upcase %></h1>
+<%= form_for @link do |f| %>
+  <%= f.label :url %>:
+  <%= f.text_field :url, placeholder: @link.url%>
+  <%= f.label :title %>:
+  <%= f.text_field :title, placeholder: @link.title%>
+  <%= f.submit "Update" %>
+<% end %>

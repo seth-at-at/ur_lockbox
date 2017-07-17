@@ -1,1 +1,28 @@
 <%= link_to "Sign Out", logout_path %>
+<br><br>
+URL:<input type="text" id="url_input" value="">
+Title:<input type="text" id="title_input" value="">
+<button id="add-link">Add Link</button>
+<br><br>
+<h3>Filters:</h3>
+<br>
+By text:<input type="text" id="by_text" value="">
+<button>Only Unread Links</button>
+<button>Only Read Links</button>
+<hr>
+<div id="all_links">
+  <% @links.each do |link| %>
+
+    <div class="link" id="<%=link.id%>">
+      Title: <%= link.title %> <br> <br>
+      URL: <%= link_to link.url, link.url%><br><br>
+      <div id="mark_ru">
+        Read? <%= link_read(link.read) %><br><br>
+      </div>
+      <button id="unread"> <%=mark_button(link)%></button>
+      <button id="read" style="display:none;">Mark as Unread</button>
+      <%= link_to "Edit", link_path(link)%>
+    </div>
+
+  <% end %>
+</div>

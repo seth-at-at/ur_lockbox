@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get "/signup", to: "users#new", as: 'signup'
   post "/create", to: "users#create", as: 'create_user'
 
+  resources :links, only: [:index, :create, :update, :new, :show]
 end
