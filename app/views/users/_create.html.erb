@@ -1,8 +1,5 @@
-<div class="create-user" style="display:none;">
-<%= form_for @user, url: create_user_path do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %><br>
-
+<div class="create-user">
+<%= form_for :user, url: create_user_path do |f| %>
     <%= f.label :email %>
     <%= f.text_field :email %><br>
 

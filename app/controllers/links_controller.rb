@@ -3,7 +3,7 @@ class LinksController < ApplicationController
     if current_user
       @current_user = current_user
     else
-      redirect_to login_signup_path
+      redirect_to login_path
     end
   end
 end
