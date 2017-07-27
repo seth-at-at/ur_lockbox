@@ -3,7 +3,7 @@ module ApplicationHelper
     link == "Read"
   end
 
-  def mark_button(link)
+  def button_starter(link)
     link.read == "Read" ? "Mark as Unread" : "Mark as Read"
   end
 end
