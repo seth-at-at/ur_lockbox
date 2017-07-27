@@ -16,3 +16,4 @@
 //= bootstrap-sprockets
 //= bootstrap
 //= require_tree .
+//= require links

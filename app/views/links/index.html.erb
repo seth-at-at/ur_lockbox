@@ -16,12 +16,12 @@ By text:<input type="text" id="by_text" value="">
     <div class="link" id="<%=link.id%>">
       Title: <%= link.title %> <br> <br>
       URL: <%= link_to link.url, link.url%><br><br>
-      <div id="mark_ru">
+      <div class="mark_ru">
         Read? <%= link_read(link.read) %><br><br>
       </div>
-        <button id="mark_starter"> <%= button_starter(link) %> </button>
-        <button id="unread" style="display:none;">Mark as Read</button>
-        <button id="read" style="display:none;">Mark as Unread</button>
+        <button class="mark_starter"> <%= button_starter(link) %> </button>
+        <button class="unread" style="display:none;">Mark as Read</button>
+        <button class="read" style="display:none;">Mark as Unread</button>
       <%= link_to "Edit", link_path(link)%>
     </div>
 

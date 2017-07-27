@@ -28,11 +28,11 @@ function createLink(title, url) {
   let div = `<div class="link" id="link">
         Title: ${ title } <br> <br>
         URL: <a href="${url}">${url}</a> <br><br>
-        <div id="mark_ru">
+        <div id=.mark_ru">
           Read? false <br><br>
         </div>
-        <button id="mark_starter"> Mark as Read </button>
-        <button id="unread" style="display:none;">Mark as Read</button>
+        <button class="mark_starter"> Mark as Read </button>
+        <button id=.unread" style="display:none;">Mark as Read</button>
         <button id="read" style="display:none;">Mark as Unread</button>
       </div>`
       // document.getElementsByClassName('Links')[0].createElement('div').innerHTML(div)
@@ -45,8 +45,8 @@ function createLink(title, url) {
 function markRead() {
   this.style.display = "none"
   let parent = this.parentElement
-  $(`#${parent.id} #read`)[0].style.display = ""
-  $(`#${parent.id} #mark_ru`)[0].innerHTML = `Read? true<br><br>`
+  $(`#${parent.id} .read`)[0].style.display = ""
+  $(`#${parent.id} .mark_ru`)[0].innerHTML = `Read? true<br><br>`
   $.ajax({
     type: 'PUT',
     data: {read: "Read"},
@@ -57,8 +57,8 @@ function markRead() {
 function markUnread() {
   this.style.display = "none"
   let parent = this.parentElement
-  $(`#${parent.id} #unread`)[0].style.display = ""
-  $(`#${parent.id} #mark_ru`)[0].innerHTML = `Read? false<br><br>`
+  $(`#${parent.id} .unread`)[0].style.display = ""
+  $(`#${parent.id} .mark_ru`)[0].innerHTML = `Read? false<br><br>`
 
   $.ajax({
     type: 'PUT',
@@ -70,8 +70,8 @@ function mark() {
   if (this.innerHTML == " Mark as Unread ") {
     this.style.display = "none"
     let parent = this.parentElement
-    $(`#${parent.id} #unread`)[0].style.display = ""
-    $(`#${parent.id} #mark_ru`)[0].innerHTML = `Read? false<br><br>`
+    $(`#${parent.id} .unread`)[0].style.display = ""
+    $(`#${parent.id} .mark_ru`)[0].innerHTML = `Read? false<br><br>`
 
     $.ajax({
       type: 'PUT',
@@ -82,8 +82,8 @@ function mark() {
   else {
     this.style.display = "none"
     let parent = this.parentElement
-    $(`#${parent.id} #read`)[0].style.display = ""
-    $(`#${parent.id} #mark_ru`)[0].innerHTML = `Read? true<br><br>`
+    $(`#${parent.id} .read`)[0].style.display = ""
+    $(`#${parent.id} .mark_ru`)[0].innerHTML = `Read? true<br><br>`
 
     $.ajax({
       type: 'PUT',
@@ -95,7 +95,7 @@ function mark() {
 
 $(document).ready(function(){
   $('#add-link').on('click', checkLinks)
-  $('#mark_starter').on('click', mark)
-  $('#unread').on('click', markRead)
-  $('#read').on('click', markUnread)
+  $('.mark_starter').on('click', mark)
+  $('.unread').on('click', markRead)
+  $('.read').on('click', markUnread)
 })
