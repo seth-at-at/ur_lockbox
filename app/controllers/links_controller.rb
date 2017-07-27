@@ -18,10 +18,10 @@ class LinksController < ApplicationController
     link = Link.find(params[:id])
     if params[:link]
       link.update(second_link_params)
-      head :no_content
+      redirect_to root_path
     else
       link.update(link_params)
-      head :no_content
+      redirect_to root_path
     end
   end
 
